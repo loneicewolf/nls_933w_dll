@@ -1,9 +1,13 @@
-# nls_933w_dll
+# nls_933w.dll
+# WIN32M.SYS
 
 ```
 Small note: sometimes named
 - nls_933w_dll
 - nls_933w.dll
+
+- WIN32M_SYS
+- WIN32M.SYS
 
 Just as fanny.bmp is sometimes named "fanny_bmp" and "fanny.bmp"
 
