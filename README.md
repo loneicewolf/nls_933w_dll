@@ -18,7 +18,7 @@ Refs:
 
 
 ```
-$ for ALGO in {md5sum,sha1sum,sha224sum,sha256sum,sha384sum,sha512sum}; do $ALGO nls_933w.dll; done 11fb08b9126cdb4668b3f5135cf7a6c5  nls_933w.dll
+$ for ALGO in {md5sum,sha1sum,sha224sum,sha256sum,sha384sum,sha512sum}; do $ALGO nls_933w.dll; done
 $ SUMS
 ff2b50f371eb26f22eb8a2118e9ab0e015081500  nls_933w.dll
 a67ecb844ca20ae3c934ebb1683190376f3aca1c9d72b7d37b57eee2  nls_933w.dll
