@@ -18,6 +18,9 @@ Refs:
 
 
 ```
+$ file nls_933w.dll 
+nls_933w.dll: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+
 $ for ALGO in {md5sum,sha1sum,sha224sum,sha256sum,sha384sum,sha512sum}; do $ALGO nls_933w.dll; done
 $ SUMS
 ff2b50f371eb26f22eb8a2118e9ab0e015081500  nls_933w.dll
@@ -179,4 +182,368 @@ nth paddr          size vaddr         vsize perm type name
 3   0x0002d200   0x4e00 0x10030000   0x5000 -r-- ---- .rsrc
 4   0x00032000   0x1e00 0x10035000   0x2000 -r-- ---- .reloc
 ```
+
+
+```
+$ file WIN32M.SYS 
+WIN32M.SYS: PE32 executable (native) Intel 80386, for MS Windows
+
+$ for ALGO in {md5sum,sha1sum,sha224sum,sha256sum,sha384sum,sha512sum}; do $ALGO WIN32M.SYS; done
+2b444ac5209a8b4140dd6b747a996653  WIN32M.SYS
+645678c4ed9bbdd641c4ff4dcb1825c262b2d879  WIN32M.SYS
+22baf875e4f2182ded216fae1c58e9554d2728f4998b53c2c5214fc3  WIN32M.SYS
+07fc80ecaa8f12f0d57fbf9627d5505b8f969a84fc3907c31dd68f5022edf643  WIN32M.SYS
+a84b4c03775a94f2e4288a2337078a66f27929a80977a744d1bb00afaf6b5a605d68435eb204948deab64c82f94cd297  WIN32M.SYS
+9adf7d3e218110323f2a5930cb2bfaf2b948b45947ad951ac43619b1440031b77bd61c43719a00085bae0337746458b6e9e6729885503e8a5295086f15b3a362  WIN32M.SYS
+
+
+
+
+$ rabin2 -g WIN32M.SYS
+ERROR: Missing bin header main
+ERROR: Missing bin header dwarf
+[Sections]
+
+nth paddr         size vaddr        vsize perm type name
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+0   0x00000300  0x3b80 0x00010300  0x3b80 -r-x ---- .text
+1   0x00003e80   0x200 0x00013e80   0x200 -r-- ---- .rdata
+2   0x00004080   0x100 0x00014080   0x100 -rw- ---- .data
+3   0x00004180   0x780 0x00014180   0x780 -rwx ---- INIT
+4   0x00004900   0x300 0x00014900   0x300 -r-- ---- .reloc
+
+[Segments]
+
+nth paddr  size vaddr  vsize perm type name
+―――――――――――――――――――――――――――――――――――――――――――
+
+[Entrypoints]
+vaddr=0x00010812 paddr=0x00000812 haddr=0x000000f0 type=program
+
+1 entrypoints
+[Constructors]
+
+0 entrypoints
+[Imports]
+nth vaddr      bind type lib          name
+――――――――――――――――――――――――――――――――――――――――――
+1   0x00013ed0 NONE FUNC ntoskrnl.exe KeSetEvent
+2   0x00013ed4 NONE FUNC ntoskrnl.exe KeWaitForMultipleObjects
+3   0x00013ed8 NONE FUNC ntoskrnl.exe _allmul
+4   0x00013edc NONE FUNC ntoskrnl.exe ZwSetInformationThread
+5   0x00013ee0 NONE FUNC ntoskrnl.exe PsTerminateSystemThread
+6   0x00013ee4 NONE FUNC ntoskrnl.exe KeSetPriorityThread
+7   0x00013ee8 NONE FUNC ntoskrnl.exe KeGetCurrentThread
+8   0x00013eec NONE FUNC ntoskrnl.exe ZwClose
+9   0x00013ef0 NONE FUNC ntoskrnl.exe PsCreateSystemThread
+10  0x00013ef4 NONE FUNC ntoskrnl.exe KeInitializeEvent
+11  0x00013ef8 NONE FUNC ntoskrnl.exe KeWaitForSingleObject
+12  0x00013efc NONE FUNC ntoskrnl.exe KeInitializeMutex
+13  0x00013f00 NONE FUNC ntoskrnl.exe IoAcquireCancelSpinLock
+14  0x00013f04 NONE FUNC ntoskrnl.exe READ_REGISTER_UCHAR
+15  0x00013f08 NONE FUNC ntoskrnl.exe WRITE_REGISTER_UCHAR
+16  0x00013f0c NONE FUNC ntoskrnl.exe WRITE_REGISTER_BUFFER_USHORT
+17  0x00013f10 NONE FUNC ntoskrnl.exe READ_REGISTER_BUFFER_USHORT
+18  0x00013f14 NONE FUNC ntoskrnl.exe READ_REGISTER_ULONG
+19  0x00013f18 NONE FUNC ntoskrnl.exe WRITE_REGISTER_ULONG
+20  0x00013f1c NONE FUNC ntoskrnl.exe MmGetPhysicalAddress
+21  0x00013f20 NONE FUNC ntoskrnl.exe MmAllocateContiguousMemorySpecifyCache
+22  0x00013f24 NONE FUNC ntoskrnl.exe MmFreeContiguousMemorySpecifyCache
+23  0x00013f28 NONE FUNC ntoskrnl.exe MmAllocateNonCachedMemory
+24  0x00013f2c NONE FUNC ntoskrnl.exe MmFreeNonCachedMemory
+25  0x00013f30 NONE FUNC ntoskrnl.exe READ_REGISTER_USHORT
+26  0x00013f34 NONE FUNC ntoskrnl.exe WRITE_REGISTER_USHORT
+27  0x00013f38 NONE FUNC ntoskrnl.exe MmMapIoSpace
+28  0x00013f3c NONE FUNC ntoskrnl.exe MmUnmapIoSpace
+29  0x00013f40 NONE FUNC ntoskrnl.exe KeInsertQueueDpc
+30  0x00013f44 NONE FUNC ntoskrnl.exe KeSetTargetProcessorDpc
+31  0x00013f48 NONE FUNC ntoskrnl.exe IoReleaseCancelSpinLock
+32  0x00013f4c NONE FUNC ntoskrnl.exe KeInitializeSpinLock
+33  0x00013f50 NONE FUNC ntoskrnl.exe IoCreateDevice
+34  0x00013f54 NONE FUNC ntoskrnl.exe IoCreateSymbolicLink
+35  0x00013f58 NONE FUNC ntoskrnl.exe ExAllocatePoolWithTag
+36  0x00013f5c NONE FUNC ntoskrnl.exe RtlCopyUnicodeString
+37  0x00013f60 NONE FUNC ntoskrnl.exe IofCompleteRequest
+38  0x00013f64 NONE FUNC ntoskrnl.exe ExFreePoolWithTag
+39  0x00013f68 NONE FUNC ntoskrnl.exe RtlInitUnicodeString
+40  0x00013f6c NONE FUNC ntoskrnl.exe IoDeleteSymbolicLink
+41  0x00013f70 NONE FUNC ntoskrnl.exe IoDeleteDevice
+42  0x00013f74 NONE FUNC ntoskrnl.exe KeNumberProcessors
+43  0x00013f78 NONE FUNC ntoskrnl.exe KeCancelTimer
+44  0x00013f7c NONE FUNC ntoskrnl.exe KeInitializeDpc
+45  0x00013f80 NONE FUNC ntoskrnl.exe KeInitializeTimerEx
+46  0x00013f84 NONE FUNC ntoskrnl.exe KeReleaseMutex
+47  0x00013f88 NONE FUNC ntoskrnl.exe KeSetTimerEx
+1   0x00013e80 NONE FUNC HAL.dll      KeRaiseIrqlToDpcLevel
+2   0x00013e84 NONE FUNC HAL.dll      KfRaiseIrql
+3   0x00013e88 NONE FUNC HAL.dll      HalGetBusData
+4   0x00013e8c NONE FUNC HAL.dll      HalGetBusDataByOffset
+5   0x00013e90 NONE FUNC HAL.dll      HalSetBusDataByOffset
+6   0x00013e94 NONE FUNC HAL.dll      KeGetCurrentIrql
+7   0x00013e98 NONE FUNC HAL.dll      WRITE_PORT_ULONG
+8   0x00013e9c NONE FUNC HAL.dll      WRITE_PORT_USHORT
+9   0x00013ea0 NONE FUNC HAL.dll      READ_PORT_USHORT
+10  0x00013ea4 NONE FUNC HAL.dll      READ_PORT_ULONG
+11  0x00013ea8 NONE FUNC HAL.dll      READ_PORT_BUFFER_USHORT
+12  0x00013eac NONE FUNC HAL.dll      WRITE_PORT_BUFFER_USHORT
+13  0x00013eb0 NONE FUNC HAL.dll      KeStallExecutionProcessor
+14  0x00013eb4 NONE FUNC HAL.dll      WRITE_PORT_UCHAR
+15  0x00013eb8 NONE FUNC HAL.dll      READ_PORT_UCHAR
+16  0x00013ebc NONE FUNC HAL.dll      HalGetInterruptVector
+17  0x00013ec0 NONE FUNC HAL.dll      KfAcquireSpinLock
+18  0x00013ec4 NONE FUNC HAL.dll      KfReleaseSpinLock
+19  0x00013ec8 NONE FUNC HAL.dll      KfLowerIrql
+
+[Symbols]
+nth paddr      vaddr      bind type size lib          name                                       demangled
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+1   0x00003ed0 0x00013ed0 NONE FUNC 0    ntoskrnl.exe imp.KeSetEvent
+2   0x00003ed4 0x00013ed4 NONE FUNC 0    ntoskrnl.exe imp.KeWaitForMultipleObjects
+3   0x00003ed8 0x00013ed8 NONE FUNC 0    ntoskrnl.exe imp._allmul
+4   0x00003edc 0x00013edc NONE FUNC 0    ntoskrnl.exe imp.ZwSetInformationThread
+5   0x00003ee0 0x00013ee0 NONE FUNC 0    ntoskrnl.exe imp.PsTerminateSystemThread
+6   0x00003ee4 0x00013ee4 NONE FUNC 0    ntoskrnl.exe imp.KeSetPriorityThread
+7   0x00003ee8 0x00013ee8 NONE FUNC 0    ntoskrnl.exe imp.KeGetCurrentThread
+8   0x00003eec 0x00013eec NONE FUNC 0    ntoskrnl.exe imp.ZwClose
+9   0x00003ef0 0x00013ef0 NONE FUNC 0    ntoskrnl.exe imp.PsCreateSystemThread
+10  0x00003ef4 0x00013ef4 NONE FUNC 0    ntoskrnl.exe imp.KeInitializeEvent
+11  0x00003ef8 0x00013ef8 NONE FUNC 0    ntoskrnl.exe imp.KeWaitForSingleObject
+12  0x00003efc 0x00013efc NONE FUNC 0    ntoskrnl.exe imp.KeInitializeMutex
+13  0x00003f00 0x00013f00 NONE FUNC 0    ntoskrnl.exe imp.IoAcquireCancelSpinLock
+14  0x00003f04 0x00013f04 NONE FUNC 0    ntoskrnl.exe imp.READ_REGISTER_UCHAR
+15  0x00003f08 0x00013f08 NONE FUNC 0    ntoskrnl.exe imp.WRITE_REGISTER_UCHAR
+16  0x00003f0c 0x00013f0c NONE FUNC 0    ntoskrnl.exe imp.WRITE_REGISTER_BUFFER_USHORT
+17  0x00003f10 0x00013f10 NONE FUNC 0    ntoskrnl.exe imp.READ_REGISTER_BUFFER_USHORT
+18  0x00003f14 0x00013f14 NONE FUNC 0    ntoskrnl.exe imp.READ_REGISTER_ULONG
+19  0x00003f18 0x00013f18 NONE FUNC 0    ntoskrnl.exe imp.WRITE_REGISTER_ULONG
+20  0x00003f1c 0x00013f1c NONE FUNC 0    ntoskrnl.exe imp.MmGetPhysicalAddress
+21  0x00003f20 0x00013f20 NONE FUNC 0    ntoskrnl.exe imp.MmAllocateContiguousMemorySpecifyCache
+22  0x00003f24 0x00013f24 NONE FUNC 0    ntoskrnl.exe imp.MmFreeContiguousMemorySpecifyCache
+23  0x00003f28 0x00013f28 NONE FUNC 0    ntoskrnl.exe imp.MmAllocateNonCachedMemory
+24  0x00003f2c 0x00013f2c NONE FUNC 0    ntoskrnl.exe imp.MmFreeNonCachedMemory
+25  0x00003f30 0x00013f30 NONE FUNC 0    ntoskrnl.exe imp.READ_REGISTER_USHORT
+26  0x00003f34 0x00013f34 NONE FUNC 0    ntoskrnl.exe imp.WRITE_REGISTER_USHORT
+27  0x00003f38 0x00013f38 NONE FUNC 0    ntoskrnl.exe imp.MmMapIoSpace
+28  0x00003f3c 0x00013f3c NONE FUNC 0    ntoskrnl.exe imp.MmUnmapIoSpace
+29  0x00003f40 0x00013f40 NONE FUNC 0    ntoskrnl.exe imp.KeInsertQueueDpc
+30  0x00003f44 0x00013f44 NONE FUNC 0    ntoskrnl.exe imp.KeSetTargetProcessorDpc
+31  0x00003f48 0x00013f48 NONE FUNC 0    ntoskrnl.exe imp.IoReleaseCancelSpinLock
+32  0x00003f4c 0x00013f4c NONE FUNC 0    ntoskrnl.exe imp.KeInitializeSpinLock
+33  0x00003f50 0x00013f50 NONE FUNC 0    ntoskrnl.exe imp.IoCreateDevice
+34  0x00003f54 0x00013f54 NONE FUNC 0    ntoskrnl.exe imp.IoCreateSymbolicLink
+35  0x00003f58 0x00013f58 NONE FUNC 0    ntoskrnl.exe imp.ExAllocatePoolWithTag
+36  0x00003f5c 0x00013f5c NONE FUNC 0    ntoskrnl.exe imp.RtlCopyUnicodeString
+37  0x00003f60 0x00013f60 NONE FUNC 0    ntoskrnl.exe imp.IofCompleteRequest
+38  0x00003f64 0x00013f64 NONE FUNC 0    ntoskrnl.exe imp.ExFreePoolWithTag
+39  0x00003f68 0x00013f68 NONE FUNC 0    ntoskrnl.exe imp.RtlInitUnicodeString
+40  0x00003f6c 0x00013f6c NONE FUNC 0    ntoskrnl.exe imp.IoDeleteSymbolicLink
+41  0x00003f70 0x00013f70 NONE FUNC 0    ntoskrnl.exe imp.IoDeleteDevice
+42  0x00003f74 0x00013f74 NONE FUNC 0    ntoskrnl.exe imp.KeNumberProcessors
+43  0x00003f78 0x00013f78 NONE FUNC 0    ntoskrnl.exe imp.KeCancelTimer
+44  0x00003f7c 0x00013f7c NONE FUNC 0    ntoskrnl.exe imp.KeInitializeDpc
+45  0x00003f80 0x00013f80 NONE FUNC 0    ntoskrnl.exe imp.KeInitializeTimerEx
+46  0x00003f84 0x00013f84 NONE FUNC 0    ntoskrnl.exe imp.KeReleaseMutex
+47  0x00003f88 0x00013f88 NONE FUNC 0    ntoskrnl.exe imp.KeSetTimerEx
+1   0x00003e80 0x00013e80 NONE FUNC 0    HAL.dll      imp.KeRaiseIrqlToDpcLevel
+2   0x00003e84 0x00013e84 NONE FUNC 0    HAL.dll      imp.KfRaiseIrql
+3   0x00003e88 0x00013e88 NONE FUNC 0    HAL.dll      imp.HalGetBusData
+4   0x00003e8c 0x00013e8c NONE FUNC 0    HAL.dll      imp.HalGetBusDataByOffset
+5   0x00003e90 0x00013e90 NONE FUNC 0    HAL.dll      imp.HalSetBusDataByOffset
+6   0x00003e94 0x00013e94 NONE FUNC 0    HAL.dll      imp.KeGetCurrentIrql
+7   0x00003e98 0x00013e98 NONE FUNC 0    HAL.dll      imp.WRITE_PORT_ULONG
+8   0x00003e9c 0x00013e9c NONE FUNC 0    HAL.dll      imp.WRITE_PORT_USHORT
+9   0x00003ea0 0x00013ea0 NONE FUNC 0    HAL.dll      imp.READ_PORT_USHORT
+10  0x00003ea4 0x00013ea4 NONE FUNC 0    HAL.dll      imp.READ_PORT_ULONG
+11  0x00003ea8 0x00013ea8 NONE FUNC 0    HAL.dll      imp.READ_PORT_BUFFER_USHORT
+12  0x00003eac 0x00013eac NONE FUNC 0    HAL.dll      imp.WRITE_PORT_BUFFER_USHORT
+13  0x00003eb0 0x00013eb0 NONE FUNC 0    HAL.dll      imp.KeStallExecutionProcessor
+14  0x00003eb4 0x00013eb4 NONE FUNC 0    HAL.dll      imp.WRITE_PORT_UCHAR
+15  0x00003eb8 0x00013eb8 NONE FUNC 0    HAL.dll      imp.READ_PORT_UCHAR
+16  0x00003ebc 0x00013ebc NONE FUNC 0    HAL.dll      imp.HalGetInterruptVector
+17  0x00003ec0 0x00013ec0 NONE FUNC 0    HAL.dll      imp.KfAcquireSpinLock
+18  0x00003ec4 0x00013ec4 NONE FUNC 0    HAL.dll      imp.KfReleaseSpinLock
+19  0x00003ec8 0x00013ec8 NONE FUNC 0    HAL.dll      imp.KfLowerIrql
+[Strings]
+nth paddr vaddr len size section type string
+――――――――――――――――――――――――――――――――――――――――――――
+arch     x86
+baddr    0x10000
+binsz    19456
+bintype  pe
+bits     32
+canary   true
+injprot  false
+retguard false
+class    PE32
+cmp.csum 0x000125fe
+compiled Thu Aug 23 19:03:19 2001
+crypto   false
+endian   little
+havecode true
+hdr.csum 0x000125fe
+laddr    0x0
+lang     c
+linenum  true
+lsyms    true
+machine  i386
+nx       false
+os       native
+overlay  false
+cc       cdecl
+pic      false
+relocs   false
+signed   false
+sanitize false
+static   false
+stripped false
+subsys   Native
+va       true
+PE file header:
+IMAGE_NT_HEADERS
+  Signature : 0x4550
+IMAGE_FILE_HEADERS
+  Machine : 0x14c
+  NumberOfSections : 0x5
+  TimeDateStamp : 0x3b853757
+  PointerToSymbolTable : 0x0
+  NumberOfSymbols : 0x0
+  SizeOfOptionalHeader : 0xe0
+  Characteristics : 0x10e
+IMAGE_OPTIONAL_HEADERS
+  Magic : 0x10b
+  MajorLinkerVersion : 0x7
+  MinorLinkerVersion : 0x0
+  SizeOfCode : 0x4300
+  SizeOfInitializedData : 0x600
+  SizeOfUninitializedData : 0x0
+  AddressOfEntryPoint : 0x812
+  BaseOfCode : 0x300
+  BaseOfData : 0x3e80
+  ImageBase : 0x10000
+  SectionAlignment : 0x80
+  FileAlignment : 0x80
+  MajorOperatingSystemVersion : 0x5
+  MinorOperatingSystemVersion : 0x1
+  MajorImageVersion : 0x5
+  MinorImageVersion : 0x1
+  MajorSubsystemVersion : 0x5
+  MinorSubsystemVersion : 0x1
+  Win32VersionValue : 0x0
+  SizeOfImage : 0x4c00
+  SizeOfHeaders : 0x300
+  CheckSum : 0x125fe
+  Subsystem : 0x1
+  DllCharacteristics : 0x0
+  SizeOfStackReserve : 0x40000
+  SizeOfStackCommit : 0x1000
+  SizeOfHeapReserve : 0x100000
+  SizeOfHeapCommit : 0x1000
+  LoaderFlags : 0x0
+  NumberOfRvaAndSizes : 0x10
+RICH_FIELDS
+  Product: 61 Name: Linker700 Version: 9210 Times: 1
+  Product: 29 Name: Utc13_CPP Version: 9178 Times: 13
+  Product: 28 Name: Utc13_C Version: 9178 Times: 2
+  Product: 25 Name: Implib700 Version: 9210 Times: 5
+  Product: 1 Name: Import0 Version: 0 Times: 66
+IMAGE_DIRECTORY_ENTRY_IMPORT
+  VirtualAddress : 0x4180
+  Size : 0x3c
+IMAGE_DIRECTORY_ENTRY_BASERELOC
+  VirtualAddress : 0x4900
+  Size : 0x1e4
+IMAGE_DIRECTORY_ENTRY_IAT
+  VirtualAddress : 0x3e80
+  Size : 0x110
+IMAGE_DIRECTORY_ENTRY_DELAY_IMPORT
+  VirtualAddress : 0x0
+  Size : 0xffff
+[Linked libraries]
+ntoskrnl.exe
+hal.dll
+
+2 libraries
+[Relocations]
+
+vaddr      paddr      type   name
+―――――――――――――――――――――――――――――――――
+0x000042cc 0x00003f88 SET_32 ntoskrnl.exe_KeSetTimerEx
+0x000042dc 0x00003f80 SET_32 ntoskrnl.exe_KeInitializeTimerEx
+0x000042f2 0x00003f7c SET_32 ntoskrnl.exe_KeInitializeDpc
+0x00004304 0x00003f78 SET_32 ntoskrnl.exe_KeCancelTimer
+0x00004314 0x00003f74 SET_32 ntoskrnl.exe_KeNumberProcessors
+0x0000432a 0x00003f70 SET_32 ntoskrnl.exe_IoDeleteDevice
+0x0000433c 0x00003f6c SET_32 ntoskrnl.exe_IoDeleteSymbolicLink
+0x00004354 0x00003f68 SET_32 ntoskrnl.exe_RtlInitUnicodeString
+0x0000436c 0x00003f64 SET_32 ntoskrnl.exe_ExFreePoolWithTag
+0x00004380 0x00003f60 SET_32 ntoskrnl.exe_IofCompleteRequest
+0x00004396 0x00003f5c SET_32 ntoskrnl.exe_RtlCopyUnicodeString
+0x000043ae 0x00003f58 SET_32 ntoskrnl.exe_ExAllocatePoolWithTag
+0x000043c6 0x00003f54 SET_32 ntoskrnl.exe_IoCreateSymbolicLink
+0x000043de 0x00003f50 SET_32 ntoskrnl.exe_IoCreateDevice
+0x000043f0 0x00003f4c SET_32 ntoskrnl.exe_KeInitializeSpinLock
+0x00004408 0x00003f48 SET_32 ntoskrnl.exe_IoReleaseCancelSpinLock
+0x00004422 0x00003f00 SET_32 ntoskrnl.exe_IoAcquireCancelSpinLock
+0x0000443c 0x00003efc SET_32 ntoskrnl.exe_KeInitializeMutex
+0x00004450 0x00003ef8 SET_32 ntoskrnl.exe_KeWaitForSingleObject
+0x00004468 0x00003f84 SET_32 ntoskrnl.exe_KeReleaseMutex
+0x0000447a 0x00003ed0 SET_32 ntoskrnl.exe_KeSetEvent
+0x00004488 0x00003ed4 SET_32 ntoskrnl.exe_KeWaitForMultipleObjects
+0x000044a4 0x00003ed8 SET_32 ntoskrnl.exe__allmul
+0x000044ae 0x00003edc SET_32 ntoskrnl.exe_ZwSetInformationThread
+0x000044c8 0x00003ee0 SET_32 ntoskrnl.exe_PsTerminateSystemThread
+0x000044e2 0x00003ee4 SET_32 ntoskrnl.exe_KeSetPriorityThread
+0x000044f8 0x00003ee8 SET_32 ntoskrnl.exe_KeGetCurrentThread
+0x0000450e 0x00003eec SET_32 ntoskrnl.exe_ZwClose
+0x00004518 0x00003ef0 SET_32 ntoskrnl.exe_PsCreateSystemThread
+0x00004530 0x00003ef4 SET_32 ntoskrnl.exe_KeInitializeEvent
+0x00004552 0x00003ec4 SET_32 HAL.dll_KfReleaseSpinLock
+0x00004566 0x00003ec0 SET_32 HAL.dll_KfAcquireSpinLock
+0x00004582 0x00003f04 SET_32 ntoskrnl.exe_READ_REGISTER_UCHAR
+0x00004598 0x00003f08 SET_32 ntoskrnl.exe_WRITE_REGISTER_UCHAR
+0x000045b0 0x00003f0c SET_32 ntoskrnl.exe_WRITE_REGISTER_BUFFER_USHORT
+0x000045d0 0x00003f10 SET_32 ntoskrnl.exe_READ_REGISTER_BUFFER_USHORT
+0x000045ee 0x00003f14 SET_32 ntoskrnl.exe_READ_REGISTER_ULONG
+0x00004604 0x00003f18 SET_32 ntoskrnl.exe_WRITE_REGISTER_ULONG
+0x0000461c 0x00003f1c SET_32 ntoskrnl.exe_MmGetPhysicalAddress
+0x00004634 0x00003f20 SET_32 ntoskrnl.exe_MmAllocateContiguousMemorySpecifyCache
+0x0000465e 0x00003f24 SET_32 ntoskrnl.exe_MmFreeContiguousMemorySpecifyCache
+0x00004684 0x00003f28 SET_32 ntoskrnl.exe_MmAllocateNonCachedMemory
+0x000046a0 0x00003f2c SET_32 ntoskrnl.exe_MmFreeNonCachedMemory
+0x000046b8 0x00003f30 SET_32 ntoskrnl.exe_READ_REGISTER_USHORT
+0x000046d0 0x00003f34 SET_32 ntoskrnl.exe_WRITE_REGISTER_USHORT
+0x000046e8 0x00003f38 SET_32 ntoskrnl.exe_MmMapIoSpace
+0x000046f8 0x00003f3c SET_32 ntoskrnl.exe_MmUnmapIoSpace
+0x0000470a 0x00003f40 SET_32 ntoskrnl.exe_KeInsertQueueDpc
+0x0000471e 0x00003f44 SET_32 ntoskrnl.exe_KeSetTargetProcessorDpc
+0x00004738 0x00003ebc SET_32 HAL.dll_HalGetInterruptVector
+0x00004750 0x00003eb8 SET_32 HAL.dll_READ_PORT_UCHAR
+0x00004762 0x00003eb4 SET_32 HAL.dll_WRITE_PORT_UCHAR
+0x00004776 0x00003eb0 SET_32 HAL.dll_KeStallExecutionProcessor
+0x00004792 0x00003eac SET_32 HAL.dll_WRITE_PORT_BUFFER_USHORT
+0x000047ae 0x00003ea8 SET_32 HAL.dll_READ_PORT_BUFFER_USHORT
+0x000047c8 0x00003ea4 SET_32 HAL.dll_READ_PORT_ULONG
+0x000047da 0x00003ea0 SET_32 HAL.dll_READ_PORT_USHORT
+0x000047ee 0x00003e9c SET_32 HAL.dll_WRITE_PORT_USHORT
+0x00004802 0x00003e98 SET_32 HAL.dll_WRITE_PORT_ULONG
+0x00004816 0x00003e94 SET_32 HAL.dll_KeGetCurrentIrql
+0x0000482a 0x00003e90 SET_32 HAL.dll_HalSetBusDataByOffset
+0x00004842 0x00003e8c SET_32 HAL.dll_HalGetBusDataByOffset
+0x0000485a 0x00003e88 SET_32 HAL.dll_HalGetBusData
+0x0000486a 0x00003e84 SET_32 HAL.dll_KfRaiseIrql
+0x00004878 0x00003ec8 SET_32 HAL.dll_KfLowerIrql
+0x00004886 0x00003e80 SET_32 HAL.dll_KeRaiseIrqlToDpcLevel
+
+
+66 relocations
+19456
+=== VS_VERSIONINFO ===
+
+Section to Segment mapping:
+Segment Section
+---------------
+
+```
+
+
 
