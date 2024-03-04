@@ -4,6 +4,8 @@
 Note.
 *WIN32M.SYS was extracted from nls_933.dll*
 
+![image](https://github.com/loneicewolf/nls_933w_dll/assets/68499986/027d162a-bbd8-43dc-8d77-898060bb7998)
+
 
 ```
 Small note: sometimes named
