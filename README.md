@@ -3,8 +3,11 @@
 
 Note.
 *WIN32M.SYS was extracted from nls_933.dll*
+*And.. As pictures say more than words, I provide 2 screenshots instead of explaining stuff at the moment. (Tired while making this repo) <- which by the way is why it's fuzzy (as always)*
 
 ![image](https://github.com/loneicewolf/nls_933w_dll/assets/68499986/027d162a-bbd8-43dc-8d77-898060bb7998)
+
+![image](https://github.com/loneicewolf/nls_933w_dll/assets/68499986/ed7f40cb-12ef-478c-936e-6e5058f96a1a)
 
 
 ```
