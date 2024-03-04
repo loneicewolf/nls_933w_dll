@@ -1,6 +1,10 @@
 # nls_933w.dll
 # WIN32M.SYS
 
+Note.
+*WIN32M.SYS was extracted from nls_933.dll*
+
+
 ```
 Small note: sometimes named
 - nls_933w_dll
