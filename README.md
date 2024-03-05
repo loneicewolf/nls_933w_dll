@@ -7,6 +7,8 @@
 # nls_933w.dll `ff2b50f371eb26f22eb8a2118e9ab0e015081500`
 # WIN32M.SYS `645678c4ed9bbdd641c4ff4dcb1825c262b2d879`
 
+(I-Nino's indirectly related blog) - https://ininoxyz.wordpress.com/
+
 Note.
 *WIN32M.SYS was extracted from nls_933.dll*
 *And.. As pictures say more than words, I provide 2 screenshots instead of explaining stuff at the moment. (Tired while making this repo) <- which by the way is why it's fuzzy (as always)*
