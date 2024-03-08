@@ -4,6 +4,12 @@
 ```
 # ☣️
 
+***
+* See the [ONLY_MALWARE](https://github.com/loneicewolf/nls_933w_dll/tree/ONLY_MALWARE) branch for the malware.
+***
+
+
+below is some notes (slightly unsorted) 
 <details><summary> Click to Expand - organized </summary>
   
 
