@@ -3,8 +3,6 @@
 - MALWARE AHEAD! IF YOU  DO NOT  KNOW WHAT THAT IS, LEAVE 
 ```
 # ☣️
-this branch is only containing the ⚠️ malware. ⚠️
-nothing else.
 
 <details><summary> Click to Expand - organized </summary>
   
