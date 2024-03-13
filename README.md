@@ -1,6 +1,10 @@
 this branch is only containing the ⚠️ malware. ⚠️
 nothing else.
 
+TODO:
+- NMAP Script
+- MSF Module
+
 <details><summary> Click to Expand </summary>
   
   the password (as always) **should be painfully obvious** but in case it isn't: 
