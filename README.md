@@ -61,7 +61,7 @@ This repository is a collection of NLS-related files gathered from various sourc
 
 ### Why This Repository?
 
-REPLACE_NAME is nearly impossible to find on the internet. I discovered it on one of my hard drives as part of a sample collection. This repository aims to consolidate information and resources related to this elusive malware.
+NLS_933W.DLL is nearly impossible to find on the internet. I discovered it on one of my hard drives as part of a sample collection. This repository aims to consolidate information and resources related to this elusive malware.
 
 ---
 
