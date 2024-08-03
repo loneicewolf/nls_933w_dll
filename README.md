@@ -50,11 +50,11 @@ By continuing (scrolling, accessing, and/or using this repository), you acknowle
 
 ## Introduction
 
-REPLACE_NAME is a malware that targets storage device firmware, specifically HDD/SSD firmware, making it a boot/rootkit. **In a nutshell, that's REPLACE_NAME**.
+NLS is a malware that targets storage device firmware, specifically HDD/SSD firmware, making it a boot/rootkit. **In a nutshell, that's NLS**.
 
 ### Purpose
 
-This repository is a collection of REPLACE_NAME-related files gathered from various sources to make it more accessible for researchers and antivirus developers. The repository includes:
+This repository is a collection of NLS-related files gathered from various sources to make it more accessible for researchers and antivirus developers. The repository includes:
 - **Binary/Raw files**
 - **Memory and Hardware Dumps (`JTAG`/`UART`)**
 - **Sample Firmwares (before and after with diff)**
@@ -91,7 +91,7 @@ REPLACE_NAME is nearly impossible to find on the internet. I discovered it on on
 
 ## Overview
 
-REPLACE_NAME (referred to as REPLACE_SHORT_NAME) is a rootkit (or bootkit) residing in the firmware of storage devices. This grants it extreme persistence, and its mechanisms will be covered in this repository.
+NLS_933W.DLL (referred to as NLS) is a rootkit (or bootkit) residing in the firmware of storage devices. This grants it extreme persistence, and its mechanisms will be covered in this repository.
 
 ### Related Articles
 - [ ] TODO
