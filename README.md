@@ -1,9 +1,9 @@
 
 <div align="center">
 <h3>$\textcolor{red}{\textsf{ MALWARE AHEAD! IF YOU  DO NOT  KNOW WHAT THAT IS - LEAVE}}$ </h3>
-This repository is dedicated to the theoretical research and analysis of the REPLACE_NAME malware. For safety reasons, the actual malware samples are not included here. They can be found in my other repository focused on REPLACE_RELATED_REPO. Additionally, for related research, you might want to check my other repositories.
+This repository is dedicated to the theoretical research and analysis of the NLS_933W.DLL malware. For safety reasons, actual malware samples are located in another branch listed at the end of this page. Please read the Disclaimer carefully; by continuing to scroll down, you agree to its terms. Additionally, for related research, you may want to check my other repositories.
 
-Yours sincerely,
+  Yours sincerely,
 
 *Will*
 
@@ -109,15 +109,18 @@ REPLACE_NAME (referred to as REPLACE_SHORT_NAME) is a rootkit (or bootkit) resid
 </details>
 
 ---
-
 ## Acknowledgments
-- [ ] TODO
 
-<div align="center" style="color: #ff6341;">
 
-<br>
+<div align="center">
+
+I would like to express my sincere gratitude to [hasherezade](https://github.com/hasherezade/) for their invaluable contributions to the field. Specifically, their repository [crypto_utils](https://github.com/hasherezade/crypto_utils) has been an immensely useful tool in my research.
+
+Thank you for your hard work and dedication!
+
 Yours sincerely,<br>
-Will.
+*Will*
+
 </div>
 
 ---
@@ -126,3 +129,4 @@ Will.
 // Notes
 If you see a lot of `$\textcolor{red}{\...`, you need to enable JavaScript. It's just red text.
 ```
+
