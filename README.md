@@ -124,9 +124,3 @@ Yours sincerely,<br>
 </div>
 
 ---
-
-```
-// Notes
-If you see a lot of `$\textcolor{red}{\...`, you need to enable JavaScript. It's just red text.
-```
-
